@@ -1,8 +1,12 @@
+import { Header } from "./Components/Header";
+import { RepoContainer } from "./Components/RepoContainer";
+
 function App() {
   return (
-    <div >
-      
-    </div>
+    <>
+      <Header />
+      <RepoContainer />
+    </>
   );
 }
 
