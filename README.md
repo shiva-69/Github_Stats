@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+## A portal to view most starred repos with the flexibility to choose the time. Additional Details related to repos can also be viewed in graphical format.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
 
 ## Available Scripts
 
