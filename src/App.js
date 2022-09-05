@@ -1,13 +1,15 @@
-import { Header } from "./Components/Header";
-import { RepoContainer } from "./Components/RepoContainer";
+import { Home } from "./Pages/Home";
 import { RepoDetails } from "./Components/RepoDetails"
+import { Routes, Route} from "react-router-dom";
 function App() {
   return (
     <>
-      <Header />
-      <RepoContainer />
-      <RepoDetails/>
+      <Routes>
+      <Route path ="/" element={<Home/>}/>
+      <Route path = "/repo_details" element = {<RepoDetails/>}/>
+    </Routes>
     </>
+    
   );
 }
 
