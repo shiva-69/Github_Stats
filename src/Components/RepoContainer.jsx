@@ -100,7 +100,6 @@ export const RepoContainer = () => {
     }
     React.useEffect(()=>{
         setLoading(true)
-        console.log(`https://api.github.com/search/repositories?q=created:>${date}&sort=stars&order=desc`)
         fetch(`https://api.github.com/search/repositories?q=created:>${date}&sort=stars&order=desc`)
         .then((res) => res.json())
         .then((res) => {

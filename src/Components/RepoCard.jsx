@@ -1,8 +1,13 @@
 import { ArrowForwardIcon, ExternalLinkIcon} from "@chakra-ui/icons"
 import { Box, Flex, Heading, Image, Badge, Link} from "@chakra-ui/react"
+import { useDispatch } from "react-redux"
+import { addRepo } from "../Redux/Repo/Actions";
+import {useNavigate} from "react-router-dom";
 
 
 export const RepoCard = ({data}) => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const handleDate = (str) => {
         let ans = "";
         for(let i = 0; i < str.length; i++){
@@ -15,6 +20,12 @@ export const RepoCard = ({data}) => {
         }
         return ans;
     }
+    const handleClick = (info) => {
+        const link = `https://api.github.com/repos/${info}/stats/code_frequency`;
+        dispatch(addRepo(link));
+        navigate("/repo_details")
+    }
+
     return <Flex ml="10%" mr="10%" boxShadow='2xl' p='6' rounded='md' bg='white' mb="1%" >
         <Image src={data.owner.avatar_url} boxSize='150px' objectFit='cover'/>
         <Flex direction="column" grow="3" pl="3%">
@@ -30,7 +41,7 @@ export const RepoCard = ({data}) => {
                 <Link href={data.html_url} isExternal> View On Github <ExternalLinkIcon mx='2px' /></Link>
             </Flex>
         </Flex>
-            <Flex justify="center" align="center"> <ArrowForwardIcon w={8} h={8} cursor="pointer"/></Flex>
+            <Flex justify="center" align="center" onClick={() => handleClick(data.full_name)}> <ArrowForwardIcon w={8} h={8} cursor="pointer"/></Flex>
     </Flex>
 }
 
