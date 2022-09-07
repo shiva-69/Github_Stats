@@ -120,7 +120,7 @@ export const RepoContainer = () => {
         </Select>
     </Flex>
         {
-            loading ? <Flex align="center" justify="center" mt="200px"><Spinner size='xl'/></Flex> : error ? <Heading/> : data.map((item) => (
+            loading ? <Flex align="center" justify="center" mt="200px"><Spinner size='xl'/></Flex> : error ? <Flex align="center" justify="center" mt="200px"><Heading>Error</Heading></Flex>: data.map((item) => (
                 <RepoCard data={item} key={item.id}/>
             ))
         }

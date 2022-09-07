@@ -17,8 +17,7 @@ export const RepoDetails = () => {
         
     }, [])
     const data = {
-        labels: Data && Data.map((item, i) => { console.log(Data)
-        if(i < 7){
+        labels: Data && Data.slice(0,8).map((item, i) => { console.log(Data)
             let ms = item[0] * 1000;
             const dateObject = new Date(ms)
             console.log(dateObject)
@@ -26,15 +25,12 @@ export const RepoDetails = () => {
             let day = dateObject.toLocaleString("en-US", {day: "numeric"}) // 9
             let year =dateObject.toLocaleString("en-US", {year: "numeric"}) // 2019
             return `${day}-${month}-${year}`;
-        }
     }),
     datasets: [
         {
         label: "Additions",
-        data: Data.map((item, i) => {
-            if(i < 7){
+        data: Data.slice(0,8).map((item, i) => {
                 return item[1]
-            }
         }),
         fill: true,
         backgroundColor: "rgba(75,192,192,0.2)",
@@ -42,10 +38,8 @@ export const RepoDetails = () => {
         },
         {
         label: "Deletions",
-        data: Data.map((item, i) => {
-            if(i < 7){
+        data: Data.slice(0,8).map((item, i) => {
                 return item[2]
-            }
         }),
         fill: false,
         borderColor: "#742774"
@@ -53,7 +47,7 @@ export const RepoDetails = () => {
     ]
     };
   return (
-      <div style={{width : "600px"}}>
+      <div style={{width : "60%"}}>
         <Line data={data} />
       </div>
       
