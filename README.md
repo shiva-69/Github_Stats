@@ -1,10 +1,9 @@
 ## A portal to view most starred repos with the flexibility to choose the time. Additional Details related to repos can also be viewed in graphical format.
 
 ## To run this project on your local machine: 
-In the project directory, you can run:
+In the project directory, you can run the following command:
 
 ### `npm start`
-
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
