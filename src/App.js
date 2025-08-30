@@ -3,6 +3,7 @@ import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
 import { Routes, Route } from 'react-router-dom';
 import { Home } from './Pages/Home';
 import { Users } from './Pages/Users';
+import { Favorites } from './Pages/Favorites';
 import { RepoDetails } from './Components/RepoDetails';
 import ErrorBoundary from './Components/ErrorBoundary';
 import theme from './theme';
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/users" element={<Users />} />
+          <Route path="/favorites" element={<Favorites />} />
           <Route path="/repo/:owner/:repo" element={<RepoDetails />} />
         </Routes>
       </ErrorBoundary>
