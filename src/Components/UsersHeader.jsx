@@ -5,13 +5,12 @@ import {
   Heading,
   HStack,
   Button,
-  Select,
   useColorModeValue,
 } from '@chakra-ui/react';
 import { TriangleUpIcon, ViewIcon, StarIcon } from '@chakra-ui/icons';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-export const Header = ({ onTimeFilterChange, currentTimeFilter }) => {
+export const UsersHeader = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const bgColor = useColorModeValue('white', 'gray.800');
@@ -80,29 +79,6 @@ export const Header = ({ onTimeFilterChange, currentTimeFilter }) => {
             Favorites
           </Button>
         </HStack>
-
-        {/* Time Filter */}
-        <Flex align="center" gap={3}>
-          <Select
-            value={currentTimeFilter}
-            onChange={(e) => onTimeFilterChange(e.target.value)}
-            size="md"
-            w="auto"
-            bg="white"
-            border="2px"
-            borderColor={borderColor}
-            _focus={{
-              borderColor: 'blue.500',
-              boxShadow: '0 0 0 1px var(--chakra-colors-blue-500)',
-            }}
-          >
-            <option value="1week">Last Week</option>
-            <option value="2week">Last 2 Weeks</option>
-            <option value="1month">Last Month</option>
-            <option value="6month">Last 6 Months</option>
-            <option value="1year">Last Year</option>
-          </Select>
-        </Flex>
       </Flex>
     </Box>
   );
